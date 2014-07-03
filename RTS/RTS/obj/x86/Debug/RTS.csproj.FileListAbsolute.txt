@@ -1,0 +1,12 @@
+C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\obj\x86\Debug\RTS.csprojResolveAssemblyReference.cache
+C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\RTS.exe
+C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\RTS.pdb
+C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\obj\x86\Debug\RTS.exe
+C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\obj\x86\Debug\RTS.pdb
+C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\ScreenSpaceEffect.xnb
+C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\Colored.xnb
+C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\grass.xnb
+C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\dome.xnb
+C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\cloudMap.xnb
+C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\cloudMap_0.xnb

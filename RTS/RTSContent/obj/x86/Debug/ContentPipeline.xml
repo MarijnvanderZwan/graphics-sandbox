@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>ScreenSpaceEffect.fx</Source>
+      <Name>ScreenSpaceEffect</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\ScreenSpaceEffect.xnb</Output>
+      <Time>2014-03-29T17:40:11.1424155+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Colored.fx</Source>
+      <Name>Colored</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\Colored.xnb</Output>
+      <Time>2014-07-03T02:10:53.0176662+02:00</Time>
+    </Item>
+    <Item>
+      <Source>grass.dds</Source>
+      <Name>grass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\grass.xnb</Output>
+      <Time>2014-06-26T21:04:46.9178336+02:00</Time>
+    </Item>
+    <Item>
+      <Source>dome.x</Source>
+      <Name>dome</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\dome.xnb</Output>
+      <Time>2014-07-03T01:41:57.4808797+02:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\dome_0.xml</Key>
+        <Value>2014-07-03T01:46:05.0130336+02:00</Value>
+      </Dependency>
+      <Request>C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\cloudMap_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>dome.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\dome_0.xml</Output>
+      <Time>2014-07-03T01:41:57.4808797+02:00</Time>
+    </Item>
+    <Item>
+      <Source>cloudMap.jpg</Source>
+      <Name>cloudMap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\cloudMap.xnb</Output>
+      <Time>2014-07-03T01:47:15.5621672+02:00</Time>
+    </Item>
+    <Item>
+      <Source>cloudMap.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\cloudMap_0.xnb</Output>
+      <Time>2014-07-03T01:47:15.5621672+02:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTSContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTSContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Marijn\Documents\Programming\VS Workspace\RTS\RTS\RTS\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-06-02T15:20:10.7981997+02:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
