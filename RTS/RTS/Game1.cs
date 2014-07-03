@@ -20,12 +20,9 @@ namespace RTS
         SpriteBatch spriteBatch;
         Indicator indicator;
         public Army army;
-        
         Terrain terrain;
         RenderTarget2D gameRender;
         RenderTarget2D uiRender;
-        //public Camera Camera;
-        List<GameObject> gameObjects = new List<GameObject>();
 
         public Game1()
         {
@@ -42,7 +39,6 @@ namespace RTS
         {
             InputState.Initialize();
             userInterface = new UserInterface(this);
-            //Camera = userInterface.Camera;
             Components.Add(userInterface);
             base.Initialize();
         }
@@ -85,8 +81,6 @@ namespace RTS
             GraphicsDevice.SetRenderTarget(gameRender);
             GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
 
-            foreach (var gameObj in gameObjects)
-                gameObj.Draw();
             army.Draw();
             //testModel.Draw();
             terrain.Draw();

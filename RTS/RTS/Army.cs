@@ -10,9 +10,10 @@ namespace RTS
     {
         List<Unit> units = new List<Unit>();
         List<Unit> selectedUnits = new List<Unit>();
-
+        SelectionCircle selectionCircle;
         public Army()
         {
+            selectionCircle = new SelectionCircle();
         }
 
         public void Draw()
@@ -24,8 +25,9 @@ namespace RTS
                     LineModel line = new LineModel(unit.goals, unit.Position);
                     line.Draw();
                 }
+                if (selectedUnits.Contains(unit))
+                    selectionCircle.Draw(unit.Position, unit.Scale);
                 unit.Draw();
-
             }
         }
 

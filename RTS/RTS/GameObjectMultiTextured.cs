@@ -19,13 +19,14 @@ namespace RTS
 
         public new void Draw()
         {
+            var device = Game.GraphicsDevice;
             if (!Enabled) return;
 
             Effect.CurrentTechnique = Effect.Techniques["Textured"];
             Effect.Parameters["xTexture"].SetValue(texture);
 
-            Effect.Parameters["xView"].SetValue(Game.userInterface.Camera.ViewMatrix);
-            Effect.Parameters["xProjection"].SetValue(Game.userInterface.Camera.ProjectionMatrix);
+            Effect.Parameters["xView"].SetValue(Camera.ViewMatrix);
+            Effect.Parameters["xProjection"].SetValue(Camera.ProjectionMatrix);
             Effect.Parameters["xWorld"].SetValue(Matrix.CreateTranslation(Position));
             Vector3 lightDirection = new Vector3(1.0f, -1.0f, -1.0f);
             lightDirection.Normalize();
@@ -36,10 +37,10 @@ namespace RTS
             foreach (EffectPass pass in Effect.CurrentTechnique.Passes)
                 pass.Apply();
 
-            Game.GraphicsDevice.Indices = myIndexBuffer;
-            Game.GraphicsDevice.SetVertexBuffer(myVertexBuffer);
+            device.Indices = myIndexBuffer;
+            device.SetVertexBuffer(myVertexBuffer);
 
-            Game.GraphicsDevice.DrawIndexedPrimitives(primitiveType, 0, 0, Vertices.Length, 0, IndexCount);
+            device.DrawIndexedPrimitives(primitiveType, 0, 0, Vertices.Length, 0, IndexCount);
         }
 
         public new void CopyToBuffer()

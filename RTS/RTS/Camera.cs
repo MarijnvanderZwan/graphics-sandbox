@@ -22,6 +22,8 @@ namespace RTS
 
         public Camera(Vector3 camEye, Vector3 camFocus, Vector3 camUp, float aspectRatio = 4.0f / 3.0f)
         {
+            Instance = this; 
+
             eye = camEye;
             focus = camFocus;
             upPlane = new Plane(camUp, 0);
@@ -131,6 +133,12 @@ namespace RTS
         public Vector3 ProjectionToPlane(Vector2 v)
         {
             return ProjectionToPlane((int)v.X, (int)v.Y);
+        }
+
+        public static Camera Instance
+        {
+            get;
+            private set;
         }
     }
 }
