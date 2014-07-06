@@ -15,7 +15,7 @@ namespace RTS
 
         }
 
-        public static Texture2D TextureFromBitmap(String path)
+        public static Texture2D TextureFromFile(String path)
         {
             FileStream file = new FileStream(path, FileMode.Open);
             Texture2D texture = Texture2D.FromStream(Game1.Instance.GraphicsDevice, file);

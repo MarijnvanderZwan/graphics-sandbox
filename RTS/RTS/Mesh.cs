@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
+using System;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
-using System.IO;
-
 namespace RTS
 {
     public class Mesh : GameObjectTextured
@@ -17,7 +14,7 @@ namespace RTS
 
         public Mesh(String fileName)
         {
-            texture = Util.TextureFromBitmap(fileName);
+            Texture = Util.TextureFromFile(fileName);
         }
 
         public void GenerateVerticesAndIndices()

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
+using System;
 
 namespace RTS
 {
@@ -10,6 +7,7 @@ namespace RTS
     {
         Vector2 p1 = new Vector2();
         Vector2 p2 = new Vector2();
+
         public Rect(float x1, float y1, float x2, float y2)
         {
             p1 = new Vector2(Math.Min(x1, x2), Math.Min(y1, y2));

@@ -1,11 +1,9 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System.IO;
-
+using Microsoft.Xna.Framework.Graphics;
 namespace RTS
 {
     public class ModelLoader

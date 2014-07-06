@@ -110,24 +110,28 @@
   <ItemGroup>
     <Compile Include="Army.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="ControlState.cs" />
     <Compile Include="Face.cs" />
-    <Compile Include="GameObjectMultiTextured.cs" />
-    <Compile Include="GameObjectTextured.cs" />
+    <Compile Include="GameObject Definitions\GameObject2D.cs" />
+    <Compile Include="GameObject Definitions\GameObjectMultiTextured.cs" />
+    <Compile Include="GameObject Definitions\GameObjectTextured.cs" />
+    <Compile Include="HotKeys.cs" />
     <Compile Include="Mesh.cs" />
-    <Compile Include="CubeModel.cs" />
-    <Compile Include="GameObject.cs" />
-    <Compile Include="Grid.cs" />
-    <Compile Include="Indicator.cs" />
+    <Compile Include="ModelFiles\CubeModel.cs" />
+    <Compile Include="GameObject Definitions\GameObject.cs" />
+    <Compile Include="ModelFiles\Grid.cs" />
+    <Compile Include="ModelFiles\Indicator.cs" />
     <Compile Include="InputState.cs" />
-    <Compile Include="LineModel.cs" />
+    <Compile Include="ModelFiles\LineModel.cs" />
     <Compile Include="Model3D.cs" />
     <Compile Include="ModelLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Rect.cs" />
-    <Compile Include="SelectionRectangle.cs" />
-    <Compile Include="SkyDome.cs" />
+    <Compile Include="ModelFiles\SelectionCircle.cs" />
+    <Compile Include="ModelFiles\SelectionRectangle.cs" />
+    <Compile Include="ModelFiles\SkyDome.cs" />
     <Compile Include="Terrain.cs" />
     <Compile Include="Test\TestTerrain.cs" />
     <Compile Include="Test\TestArmy.cs" />
@@ -136,7 +140,7 @@
     <Compile Include="UserInterface.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="Vertex.cs" />
-    <Compile Include="VertexTextured.cs" />
+    <Compile Include="World.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

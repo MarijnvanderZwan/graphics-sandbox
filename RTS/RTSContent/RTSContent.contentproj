@@ -49,8 +49,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Colored.fx">
-      <Name>Colored</Name>
+    <Compile Include="Effect.fx">
+      <Name>Effect</Name>
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
     </Compile>

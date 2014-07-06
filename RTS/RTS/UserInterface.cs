@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
 namespace RTS
@@ -11,14 +7,14 @@ namespace RTS
     {
         SelectionRectangle selectionRect;
         public Camera Camera;
+        public ControlState ControlState;
         Plane plane = new Plane(new Vector3(0, 1, 0), 0);
 
         public UserInterface(Game1 game) : base(game)
         {
             Instance = this;
-
+            ControlState = new ControlState();
             Camera = new Camera(new Vector3(0, 100, 100), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
-
         }
 
         public override void Initialize()
@@ -65,20 +61,19 @@ namespace RTS
                 Vector3 projectedP2 = Camera.ProjectionToPlane(p2);
 
                 Rect rect = new Rect(projectedP1.X, projectedP1.Z, projectedP2.X, projectedP2.Z);
-                Game1.Instance.army.SelectUnits(rect);
+                World.Instance.Army.SelectUnits(rect);
 
                 selectionRect.Scale.X = 0;
                 selectionRect.Scale.Y = 0;
             }
 
-
-            if (InputState.IsKeyDown(Keys.LeftShift) && InputState.MouseRightButtonPressed)
-                Game1.Instance.army.QueueMoveSelectedUnits(Camera.ProjectionToPlane(InputState.MousePosition));
+            if (ControlState.HotKey == HotKeys.Shift && InputState.MouseRightButtonPressed)
+                World.Instance.Army.QueueMoveSelectedUnits(Camera.ProjectionToPlane(InputState.MousePosition));
             else if (InputState.MouseRightButtonPressed)
-                Game1.Instance.army.MoveSelectedUnits(Camera.ProjectionToPlane(InputState.MousePosition));
-
+                World.Instance.Army.MoveSelectedUnits(Camera.ProjectionToPlane(InputState.MousePosition));
 
             Camera.UpdateViewMatrix();
+            ControlState.Update();
             base.Update(gameTime);
         }
 
