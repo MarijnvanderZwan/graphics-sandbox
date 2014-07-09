@@ -13,5 +13,11 @@ namespace RTS
             model = new Model3D(Util.ModelPath + @"\crate.obj");
             AddUnit(model, new Vector3(5, 0, 0));
         }
+
+        public new void AddUnit(Model3D model, Vector3 position)
+        {
+            SmartUnit u = new SmartUnit();
+            units.Add(u);
+        }
     }
 }

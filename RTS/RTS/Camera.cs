@@ -98,7 +98,14 @@ namespace RTS
 
             Focus += Side * x;
             Focus += Vector3.Cross(Side, Vector3.UnitY) * y;
+        }
 
+        public void Rotate(Vector2 rot)
+        {
+            Matrix transform = Matrix.CreateFromQuaternion(Quaternion.CreateFromAxisAngle(Vector3.UnitY, rot.X)) * Matrix.CreateFromQuaternion(Quaternion.CreateFromAxisAngle(Side, rot.Y));
+            Vector3 focusToEye = Eye - Focus;
+            float distance = focusToEye.Length();
+            Eye = Focus + Vector3.Transform(Vector3.Normalize(focusToEye), transform) * distance;
         }
 
         public Vector3 Unproject(int x, int y, int z)

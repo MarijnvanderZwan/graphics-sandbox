@@ -1,48 +1,47 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace RTS
 {
-    public class Terrain : GameObjectTextured
+    public class Map : GameObjectTextured
     {
-        public float[] TerrainMap = new float[0];
-        public int Width, Height;
+        public int[,] obstacles;
+        int Width, Height;
 
-        public Terrain() : base()
+        public Map(Texture2D heightMap)
         {
-        }
+            Width = heightMap.Width;
+            Height = heightMap.Height;
+            Texture = Util.TextureFromFile(Util.TexturePath +@"\binary.png");
+            Color[] heightMapData = new Color[Width * Height];
+            obstacles = new int[Width, Height];
+            heightMap.GetData<Color>(heightMapData);
 
-        public void InitializeTerrain(Texture2D heightMap)
-        {
-            Color[] heightMapColors = new Color[Width * Height];
-            heightMap.GetData(heightMapColors);
-
-            TerrainMap = new float[Width * Height];
-            for (int x = 0; x < Width; x++)
-                for (int y = 0; y < Height; y++)
-                    TerrainMap[x + y * Width] = heightMapColors[x + y * Width].R / 5.0f;
-        }
-
-        public void TerrainToVertices()
-        {
-            List<VertexPositionNormalTexture> vertices = new List<VertexPositionNormalTexture>();
             for (int x = 0; x < Width; x++)
                 for (int y = 0; y < Height; y++)
                 {
-                    Vector3 position = new Vector3(x - Width / 2, TerrainMap[x + y * Width], y - Height / 2);
-                    Vector2 textureCoords = new Vector2(x, y) / 30.0f;
-                    vertices.Add(new VertexPositionNormalTexture(position, new Vector3(), textureCoords));
+                    obstacles[x, y] = heightMapData[x + y * Width].R > 0 ? 0 : 1;
                 }
 
-            Vertices = vertices.ToArray();
+            Vertices = new VertexPositionNormalTexture[Width * Height];
+
+            for (int x = 0; x < Width; x++)
+                for (int y = 0; y < Height; y++)
+                {
+                    Vector3 position = new Vector3(x, 0, y);
+                    Vector2 textureCoords = new Vector2(obstacles[x, y], 0);
+                    Vertices[x + y * Width] = new VertexPositionNormalTexture(position, new Vector3(), textureCoords);
+                }
 
             CreateIndices();
-           
             CalculateNormals();
             CopyToBuffer();
         }
+
 
         private void CreateIndices()
         {
@@ -86,4 +85,3 @@ namespace RTS
         }
     }
 }
-

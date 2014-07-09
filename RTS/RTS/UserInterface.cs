@@ -36,6 +36,15 @@ namespace RTS
             if (InputState.IsKeyDown(Keys.S))
                 Camera.Move(0, 1f);
 
+            Vector2 dPos = InputState.DeltaMousePosition;
+            float dx = dPos.X / 50f;
+            float dy = dPos.Y / 50f;
+
+            if (InputState.IsKeyDown(Keys.Q))
+                Camera.Rotate(new Vector2(-0.1f, 0));
+            if (InputState.IsKeyDown(Keys.E))
+                Camera.Rotate(new Vector2(0.1f, 0));
+
             // Camera zooming
             if (InputState.DeltaMouseScrollWheelValue > 0)
                 Camera.Zoom(1 / 1.1f);

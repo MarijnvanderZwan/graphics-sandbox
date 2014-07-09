@@ -23,7 +23,7 @@ namespace RTS
             Scale = (max - min) / 2;
         }
 
-        public void Update()
+        public virtual void Update()
         {
             if (!GoalReached())
                 Position += Vector3.Normalize(CurrentGoal - Position) * 0.25f;
@@ -33,7 +33,7 @@ namespace RTS
             model.Transformation.Translation = Position;
         }
 
-        public void SetGoal(Vector3 goal)
+        public virtual void SetGoal(Vector3 goal)
         {
             goals = new List<Vector3>();
             goals.Add(goal);
