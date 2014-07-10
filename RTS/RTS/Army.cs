@@ -20,7 +20,7 @@ namespace RTS
             {
                 if (unit.goals.Count > 0)
                 {
-                    LineModel line = new LineModel(unit.goals, unit.Position,new Vector3(0, 0.5f, 0));
+                    LineModel line = new LineModel(unit.goals, unit.Position, new Vector3(0, 0.5f, 0));
                     line.Draw();
                 }
                 if (selectedUnits.Contains(unit))

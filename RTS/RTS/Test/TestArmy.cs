@@ -16,7 +16,7 @@ namespace RTS
 
         public new void AddUnit(Model3D model, Vector3 position)
         {
-            SmartUnit u = new SmartUnit();
+            SmartUnit u = new SmartUnit(model, position);
             units.Add(u);
         }
     }

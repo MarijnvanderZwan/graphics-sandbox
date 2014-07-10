@@ -127,7 +127,7 @@
     <Compile Include="Model3D.cs" />
     <Compile Include="ModelLoader.cs" />
     <Compile Include="Node.cs" />
-    <Compile Include="PathPlanning.cs" />
+    <Compile Include="Path.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
@@ -143,7 +143,7 @@
     <Compile Include="Unit.cs" />
     <Compile Include="UserInterface.cs" />
     <Compile Include="Util.cs" />
-    <Compile Include="Vector.cs" />
+    <Compile Include="Point.cs" />
     <Compile Include="Vertex.cs" />
     <Compile Include="World.cs" />
   </ItemGroup>

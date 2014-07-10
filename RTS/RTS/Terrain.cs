@@ -28,10 +28,11 @@ namespace RTS
         public void TerrainToVertices()
         {
             List<VertexPositionNormalTexture> vertices = new List<VertexPositionNormalTexture>();
+            Vector3 offset = new Vector3(-Width / 2, 0, -Height / 2);
             for (int x = 0; x < Width; x++)
                 for (int y = 0; y < Height; y++)
                 {
-                    Vector3 position = new Vector3(x - Width / 2, TerrainMap[x + y * Width], y - Height / 2);
+                    Vector3 position = new Vector3(x, TerrainMap[x + y * Width], y) + offset;
                     Vector2 textureCoords = new Vector2(x, y) / 30.0f;
                     vertices.Add(new VertexPositionNormalTexture(position, new Vector3(), textureCoords));
                 }
