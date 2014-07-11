@@ -50,6 +50,5 @@ namespace RTS
         Open,
         Closed,
         None,
-
     };
 }

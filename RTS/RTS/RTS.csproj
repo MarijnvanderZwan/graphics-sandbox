@@ -116,7 +116,7 @@
     <Compile Include="GameObject Definitions\GameObjectMultiTextured.cs" />
     <Compile Include="GameObject Definitions\GameObjectTextured.cs" />
     <Compile Include="HotKeys.cs" />
-    <Compile Include="Map.cs" />
+    <Compile Include="Map2D.cs" />
     <Compile Include="Mesh.cs" />
     <Compile Include="ModelFiles\CubeModel.cs" />
     <Compile Include="GameObject Definitions\GameObject.cs" />
@@ -136,6 +136,8 @@
     <Compile Include="ModelFiles\SelectionRectangle.cs" />
     <Compile Include="ModelFiles\SkyDome.cs" />
     <Compile Include="Terrain.cs" />
+    <Compile Include="Test\PhysicsArmy.cs" />
+    <Compile Include="Test\PhysicsUnit.cs" />
     <Compile Include="Test\SmartUnit.cs" />
     <Compile Include="Test\TestTerrain.cs" />
     <Compile Include="Test\TestArmy.cs" />

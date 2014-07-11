@@ -7,7 +7,7 @@ namespace RTS
     public class World : DrawableGameComponent
     {
         public Terrain Terrain;
-        public Map Map;
+        public Map2D Map;
         public Army Army;
         
         public World(Game1 game) : base(game)
@@ -24,8 +24,9 @@ namespace RTS
         protected override void LoadContent()
         {
             Terrain = new TestTerrain();
-            Map = new Map(Util.TextureFromFile(Util.TexturePath + @"\maze.png"));
-            Army = new TestArmy();
+            Map = new Map2D(Util.TextureFromFile(Util.TexturePath + @"\maze.png"));
+            Army = new SmartArmy();
+            //Army = new PhysicsArmy();
             base.LoadContent();
         }
 

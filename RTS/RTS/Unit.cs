@@ -8,7 +8,7 @@ namespace RTS
     {
         public List<Vector3> goals = new List<Vector3>();
         float positionTreshold = 0.05f;
-        Model3D model;
+        public Model3D model;
         public Vector3 Position;
         public Vector3 Scale;
 

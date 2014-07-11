@@ -6,7 +6,7 @@ namespace RTS
 {
     public class SkyDome
     {
-        Texture2D cloudMap;
+        //Texture2D cloudMap;
         Model skyDome;
         GraphicsDevice device;
 
@@ -16,7 +16,7 @@ namespace RTS
             skyDome = Game1.Instance.Content.Load<Model>("dome");
             Effect effect = Game1.Instance.Content.Load<Effect> ("Effect");
             skyDome.Meshes[0].MeshParts[0].Effect = effect;
-            cloudMap = Game1.Instance.Content.Load<Texture2D>("cloudMap");
+            //cloudMap = Game1.Instance.Content.Load<Texture2D>("cloudMap");
         }
 
         public void Draw()
@@ -39,7 +39,7 @@ namespace RTS
                     currentEffect.Parameters["xWorld"].SetValue(worldMatrix);
                     currentEffect.Parameters["xView"].SetValue(Game1.Instance.UserInterface.Camera.ViewMatrix);
                     currentEffect.Parameters["xProjection"].SetValue(Game1.Instance.UserInterface.Camera.ProjectionMatrix);
-                    currentEffect.Parameters["xTexture"].SetValue(cloudMap);
+                    //currentEffect.Parameters["xTexture"].SetValue(cloudMap);
                     currentEffect.Parameters["xEnableLighting"].SetValue(false);
                 }
                 mesh.Draw();

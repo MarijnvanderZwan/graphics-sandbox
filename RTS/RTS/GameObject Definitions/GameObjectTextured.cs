@@ -16,9 +16,9 @@ namespace RTS
 
         public new void Draw()
         {
-            var device = Game.GraphicsDevice;
             if (!Enabled) return;
 
+            var device = Game.GraphicsDevice;
             Effect.CurrentTechnique = Effect.Techniques["Textured"];
             Effect.Parameters["xTexture"].SetValue(Texture);
 

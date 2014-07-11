@@ -1,6 +1,3 @@
 Content\ScreenSpaceEffect.xnb
 Content\grass.xnb
-Content\dome.xnb
-Content\cloudMap.xnb
-Content\cloudMap_0.xnb
 Content\Effect.xnb

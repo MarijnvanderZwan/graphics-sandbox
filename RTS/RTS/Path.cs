@@ -7,7 +7,7 @@ namespace RTS
     class Path
     {
         int[,] obstacles;
-        List<Point> path;
+        List<Point> possibleMoves;
         Node[,] nodes;
         int width, height;
         Point currentGoal;
@@ -17,15 +17,15 @@ namespace RTS
         public Path(int[,] obstacles)
         {
             this.obstacles = obstacles;
-            path = new List<Point>();
 
             width = obstacles.GetLength(0);
             height = obstacles.GetLength(1);
+
+            InitializePossibleMoves();
         }
 
         public List<Vector3> AStar2D(Vector3 start, Vector3 goal)
         {
-            path = new List<Point>();
             currentGoal = new Point(goal.X, goal.Z);
             nodes = new Node[width, height];
 
@@ -38,22 +38,22 @@ namespace RTS
             while (open.Count > 0 && nodes[currentGoal.X, currentGoal.Y].Status != NodeStatus.Closed)
             {
                 Point current = GetMinimum(open);
-                foreach (Point move in GetPossibleMoves())
+                foreach (Point move in possibleMoves)
                 {
-                    Point p = move + current;
+                    Point p = current + move;
 
                     if (!OutOfBounds(p) && obstacles[p.X, p.Y] == 0 && nodes[p.X, p.Y].Status != NodeStatus.Closed)
                     {
                         if (nodes[p.X, p.Y].Status == NodeStatus.None)
                         {
-                            nodes[p.X, p.Y].G = nodes[current.X, current.Y].G + Distance(current, p);
+                            nodes[p.X, p.Y].G = nodes[current.X, current.Y].G + current.Distance(p);
                             nodes[p.X, p.Y].Parent = current;
                             open.Add(p);
                             nodes[p.X, p.Y].Status = NodeStatus.Open;
                         }
-                        else if (nodes[p.X, p.Y].G > nodes[current.X, current.Y].G + Distance(current, p))
+                        else if (nodes[p.X, p.Y].G > nodes[current.X, current.Y].G + current.Distance(p))
                         {
-                            nodes[p.X, p.Y].G = nodes[current.X, current.Y].G + Distance(current, p);
+                            nodes[p.X, p.Y].G = nodes[current.X, current.Y].G + current.Distance(p);
                             nodes[p.X, p.Y].Parent = current;
                         }
                     }
@@ -61,25 +61,8 @@ namespace RTS
                 open.Remove(current);
                 nodes[current.X, current.Y].Status = NodeStatus.Closed;
             }
-           
-            GetPath();
-            path.Reverse();
-            return PathToVector3();
-        }
-
-        public List<Vector3> PathToVector3()
-        {
-            List<Vector3> p = new List<Vector3>();
-            foreach (Point v in path)
-            {
-                p.Add(new Vector3(v.X, 0, v.Y));
-            }
-            return p;
-        }
-
-        public int Distance(Point p1, Point p2)
-        {
-            return (int)(Math.Sqrt((p1.X - p2.X) * (p1.X - p2.X) + (p1.Y - p2.Y) * (p1.Y - p2.Y)) * 10);
+            Console.WriteLine(GetPath().Count);
+            return GetPath();
         }
 
         public Point GetMinimum(List<Point> points)
@@ -93,32 +76,40 @@ namespace RTS
             return min;
         }
 
-        public void GetPath()
+        public List<Vector3> GetPath()
         {
-            Point p = currentGoal;
-            path.Add(currentGoal);
-            while (nodes[p.X, p.Y].Parent.X != -1)
+            List<Vector3> path = new List<Vector3>();
+            path.Add(currentGoal.ToVector3());
+
+            Point p1 = currentGoal;
+            Point p2 = nodes[p1.X, p1.Y].Parent;
+            Point p3 = p2;                          // Testing initial three points
+
+            while (nodes[p3.X, p3.Y].Parent.X != -1)
             {
-                p = nodes[p.X, p.Y].Parent;
-                path.Add(p);
+                p3 = nodes[p3.X, p3.Y].Parent;
+                if (p3 - p2 != p2 - p1)
+                    path.Add(p2.ToVector3());
+                p1 = p2;
+                p2 = p3;
             }
+            path.Reverse();
+            return path;
         }
 
-        public List<Point> GetPossibleMoves()
+        public void InitializePossibleMoves()
         {
-            List<Point> moves = new List<Point>();
+            possibleMoves = new List<Point>();
 
-            moves.Add(new Point(1, 0));
-            moves.Add(new Point(-1, 0));
-            moves.Add(new Point(0, 1));
-            moves.Add(new Point(0, -1));
+            possibleMoves.Add(new Point(1, 0));
+            possibleMoves.Add(new Point(-1, 0));
+            possibleMoves.Add(new Point(0, 1));
+            possibleMoves.Add(new Point(0, -1));
 
-            moves.Add(new Point(1, 1));
-            moves.Add(new Point(-1, 1));
-            moves.Add(new Point(1, -1));
-            moves.Add(new Point(-1, -1));
-
-            return moves;
+            possibleMoves.Add(new Point(1, 1));
+            possibleMoves.Add(new Point(-1, 1));
+            possibleMoves.Add(new Point(1, -1));
+            possibleMoves.Add(new Point(-1, -1));
         }
 
         public bool OutOfBounds(Point p)

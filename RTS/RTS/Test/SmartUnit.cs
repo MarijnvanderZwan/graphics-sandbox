@@ -19,7 +19,9 @@ namespace RTS
 
         public override void SetGoal(Vector3 goal)
         {
-            if (goal.X >= 0 && goal.X < obstacles.GetLength(0) && goal.Z >= 0 && goal.Z < obstacles.GetLength(1) && obstacles[(int)goal.X, (int)goal.Z] == 0)
+            if (goal.X >= 0 && goal.X < obstacles.GetLength(0) &&
+                goal.Z >= 0 && goal.Z < obstacles.GetLength(1) && 
+                obstacles[(int)goal.X, (int)goal.Z] == 0)
                 goals = path.AStar2D(Position, goal);
         }
     }

@@ -14,7 +14,7 @@ namespace RTS
         {
             Instance = this;
             ControlState = new ControlState();
-            Camera = new Camera(new Vector3(0, 100, 100), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
+            Camera = new Camera(new Vector3(50, 100, 150), new Vector3(50, 0, 50), new Vector3(0, 1, 0));
         }
 
         public override void Initialize()
